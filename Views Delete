@@ -1,0 +1,13 @@
+@model TaskManager.Models.TaskItem
+
+<h2>Confirmar Exclusão</h2>
+
+<div>
+    <p>Você tem certeza que deseja excluir a tarefa: <strong>@Model.Title</strong>?</p>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit">Excluir</button>
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>
