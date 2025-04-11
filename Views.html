@@ -1,0 +1,32 @@
+@model IEnumerable<TaskManager.Models.TaskItem>
+
+<h2>Lista de Tarefas</h2>
+
+<a asp-action="Create">Nova Tarefa</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Completa?</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.DueDate.ToShortDateString()</td>
+            <td>@(item.IsCompleted ? "Sim" : "Não")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
