@@ -1,0 +1,20 @@
+TaskManager/
+│
+├── Controllers/
+│   └── TasksController.cs
+│
+├── Models/
+│   └── TaskItem.cs
+│
+├── Data/
+│   └── ApplicationDbContext.cs
+│
+├── Views/
+│   └── Tasks/
+│       ├── Index.cshtml
+│       ├── Create.cshtml
+│       ├── Edit.cshtml
+│       └── Delete.cshtml
+│
+├── Program.cs
+└── appsettings.json
